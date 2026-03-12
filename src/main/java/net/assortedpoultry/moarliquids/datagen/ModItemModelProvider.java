@@ -14,5 +14,8 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         basicItem(ModItems.BUCKET_OF_GOLD.get());
+        basicItem(ModItems.BUCKET_OF_IRON.get());
+        basicItem(ModItems.BUCKET_OF_COPPER.get());
+        basicItem(ModItems.PALLADIUM.get());
     }
 }

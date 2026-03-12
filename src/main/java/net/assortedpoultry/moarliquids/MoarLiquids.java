@@ -3,6 +3,7 @@ package net.assortedpoultry.moarliquids;
 import net.assortedpoultry.moarliquids.block.ModBlocks;
 import net.assortedpoultry.moarliquids.fluid.ModFluids;
 import net.assortedpoultry.moarliquids.fluid.ModFluidTypes;
+import net.assortedpoultry.moarliquids.item.ModCreativeModTab;
 import net.assortedpoultry.moarliquids.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -44,6 +45,7 @@ public class MoarLiquids {
         ModBlocks.register(modEventBus);
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+        ModCreativeModTab.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

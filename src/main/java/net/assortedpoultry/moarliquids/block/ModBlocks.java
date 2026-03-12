@@ -19,10 +19,17 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MoarLiquids.MOD_ID);
 
 
-    public static final DeferredBlock<Block> PALLADIUM = registerBlock("palladium",
+    public static final DeferredBlock<Block> PALLADIUM_BLOCK = registerBlock("palladium_block",
             ()-> new Block(BlockBehaviour.Properties.of()));
     public static final DeferredBlock<Block> LIQUID_GOLD = registerBlock("liquid_gold",
-            ()-> new LiquidBlock(ModFluids.GOLD_FLUID_SOURCE.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+            ()-> new LiquidBlock(ModFluids.GOLD.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
+    public static final DeferredBlock<Block> LIQUID_IRON = registerBlock("liquid_iron",
+            ()-> new LiquidBlock(ModFluids.IRON.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
+    public static final DeferredBlock<Block> LIQUID_COPPER = registerBlock("liquid_copper",
+            ()-> new LiquidBlock(ModFluids.COPPER.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
+
+    public static final DeferredBlock<Block> LIQUID_DESPAIR = registerBlock("liquid_despair",
+            ()-> new LiquidBlock(ModFluids.DESPAIR.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_SAND).liquid()));
 
 
 

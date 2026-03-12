@@ -1,15 +1,16 @@
 package net.assortedpoultry.moarliquids.datagen;
 
 import net.assortedpoultry.moarliquids.MoarLiquids;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
+import net.minecraft.data.tags.FluidTagsProvider;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
@@ -28,8 +29,18 @@ public class DataGenerators {
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTables::new, LootContextParamSets.BLOCK)),lookupProvider));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput,lookupProvider));
 
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput,existingFileHelper));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput,existingFileHelper));
+
+        BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput,lookupProvider,existingFileHelper);
+        generator.addProvider(event.includeServer(), blockTagsProvider);
+
+        ItemTagsProvider itemTagsProvider = new ModItemTagProvider(packOutput,lookupProvider,blockTagsProvider.contentsGetter(),existingFileHelper);
+        generator.addProvider(event.includeServer(),itemTagsProvider);
+
+        FluidTagsProvider fluidTagsProvider = new ModFluidTagProvider(packOutput,lookupProvider,existingFileHelper);
+        generator.addProvider(event.includeServer(),fluidTagsProvider);
     }
 }
