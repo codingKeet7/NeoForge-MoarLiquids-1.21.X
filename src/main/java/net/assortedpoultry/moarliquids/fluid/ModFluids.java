@@ -23,6 +23,7 @@ public class ModFluids {
     public static final FluidSet IRON = new FluidSet("iron_fluid", ModFluidTypes.IRON_FLUID_TYPE, () -> (LiquidBlock) ModBlocks.LIQUID_IRON.get(), ModItems.BUCKET_OF_IRON);
     public static final FluidSet COPPER = new FluidSet("copper_fluid", ModFluidTypes.COPPER_FLUID_TYPE, () -> (LiquidBlock) ModBlocks.LIQUID_COPPER.get(), ModItems.BUCKET_OF_COPPER);
     public static final FluidSet DESPAIR = new FluidSet("despair_fluid", ModFluidTypes.DESPAIR_FLUID_TYPE, () -> (LiquidBlock) ModBlocks.LIQUID_DESPAIR.get(), ModItems.BUCKET_OF_DESPAIR);
+    public static final FluidSet SLUDGE = new FluidSet("sludge_fluid", ModFluidTypes.SLUDGE_FLUID_TYPE, () -> (LiquidBlock) ModBlocks.LIQUID_SLUDGE.get(), ModItems.BUCKET_OF_SLUDGE);
 
 
     public static class FluidSet {

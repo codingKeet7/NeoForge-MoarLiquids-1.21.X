@@ -16,6 +16,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BUCKET_OF_GOLD.get());
         basicItem(ModItems.BUCKET_OF_IRON.get());
         basicItem(ModItems.BUCKET_OF_COPPER.get());
+        basicItem(ModItems.BUCKET_OF_DESPAIR.get());
+        basicItem(ModItems.BUCKET_OF_SLUDGE.get());
         basicItem(ModItems.PALLADIUM.get());
     }
 }

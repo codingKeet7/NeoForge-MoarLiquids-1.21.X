@@ -25,6 +25,9 @@ public class ModItems {
     public static final DeferredItem<Item> BUCKET_OF_DESPAIR = ITEMS.register("bucket_of_despair",
             ()-> new BucketItem(ModFluids.DESPAIR.source.get(),new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
+    public static final DeferredItem<Item> BUCKET_OF_SLUDGE = ITEMS.register("bucket_of_sludge",
+            ()-> new BucketItem(ModFluids.SLUDGE.source.get(),new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
+
 
 
     public static void register(IEventBus eventBus){

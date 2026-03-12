@@ -1,8 +1,12 @@
 package net.assortedpoultry.moarliquids.block;
 
 import net.assortedpoultry.moarliquids.MoarLiquids;
+import net.assortedpoultry.moarliquids.block.custom.HeavyLiquidBlock;
+import net.assortedpoultry.moarliquids.block.custom.MoltenLiquidBlock;
+import net.assortedpoultry.moarliquids.block.custom.SludgeBlock;
 import net.assortedpoultry.moarliquids.fluid.ModFluids;
 import net.assortedpoultry.moarliquids.item.ModItems;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -13,6 +17,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -21,16 +26,19 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> PALLADIUM_BLOCK = registerBlock("palladium_block",
             ()-> new Block(BlockBehaviour.Properties.of()));
+
     public static final DeferredBlock<Block> LIQUID_GOLD = registerBlock("liquid_gold",
-            ()-> new LiquidBlock(ModFluids.GOLD.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
+            ()-> new MoltenLiquidBlock(ModFluids.GOLD.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
     public static final DeferredBlock<Block> LIQUID_IRON = registerBlock("liquid_iron",
-            ()-> new LiquidBlock(ModFluids.IRON.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
+            ()-> new MoltenLiquidBlock(ModFluids.IRON.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
     public static final DeferredBlock<Block> LIQUID_COPPER = registerBlock("liquid_copper",
-            ()-> new LiquidBlock(ModFluids.COPPER.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
+            ()-> new MoltenLiquidBlock(ModFluids.COPPER.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA)));
 
     public static final DeferredBlock<Block> LIQUID_DESPAIR = registerBlock("liquid_despair",
-            ()-> new LiquidBlock(ModFluids.DESPAIR.source.get(),BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_SAND).liquid()));
+            ()-> new HeavyLiquidBlock(ModFluids.DESPAIR.source.get(),1,BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_SAND).liquid().speedFactor(0.00001f).noLootTable()));
 
+    public static final DeferredBlock<Block> LIQUID_SLUDGE = registerBlock("liquid_sludge",
+            ()-> new SludgeBlock(ModFluids.SLUDGE.source.get(), List.of(MobEffects.CONFUSION,MobEffects.POISON,MobEffects.MOVEMENT_SLOWDOWN), BlockBehaviour.Properties.of().liquid().noLootTable()));
 
 
 

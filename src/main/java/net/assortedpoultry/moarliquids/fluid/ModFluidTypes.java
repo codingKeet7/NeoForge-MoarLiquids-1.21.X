@@ -113,6 +113,23 @@ public class ModFluidTypes extends FluidType {
             )
     );
 
+    public static final DeferredHolder<FluidType,FluidType> SLUDGE_FLUID_TYPE = FlUID_TYPES.register("sludge_fluid",
+            () -> new MetalFluidType(FluidType.Properties.create()
+                    .canSwim(false)
+                    .canDrown(false)
+                    .pathType(PathType.LAVA)
+                    .adjacentPathType(null)
+                    .sound(SoundActions.BUCKET_FILL, SoundEvents.SOUL_SAND_BREAK)
+                    .sound(SoundActions.BUCKET_EMPTY, SoundEvents.SOUL_SAND_BREAK)
+                    .density(500)
+                    .viscosity(800),
+                    "sludge_fluid",
+                    new Vector3f(0.322f,0.231f,0.173f),
+                    0,
+                    0f
+            )
+    );
+
 
     public static void register(IEventBus eventBus){
         FlUID_TYPES.register(eventBus);

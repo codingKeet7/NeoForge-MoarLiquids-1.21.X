@@ -20,6 +20,10 @@ public class ModFluidTagProvider extends FluidTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(FluidTags.LAVA)
                 .add(ModFluids.GOLD.source.get())
-                .add(ModFluids.GOLD.flowing.get());
+                .add(ModFluids.GOLD.flowing.get())
+                .add(ModFluids.IRON.source.get())
+                .add(ModFluids.IRON.flowing.get())
+                .add(ModFluids.COPPER.source.get())
+                .add(ModFluids.COPPER.flowing.get());
     }
 }
