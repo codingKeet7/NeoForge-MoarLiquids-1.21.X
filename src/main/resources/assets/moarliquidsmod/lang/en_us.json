@@ -1,0 +1,15 @@
+{
+
+  "item.moarliquidsmod.bucket_of_gold": "Bucket Of Gold",
+  "item.moarliquidsmod.bucket_of_iron": "Bucket Of Iron",
+  "item.moarliquidsmod.bucket_of_copper": "Bucket Of Copper",
+  "item.moarliquidsmod.bucket_of_despair": "Bucket Of Despair",
+  "item.moarliquidsmod.bucket_of_sludge": "Bucket Of Sludge",
+  "item.moarliquidsmod.palladium": "Palladium",
+
+  "block.moarliquidsmod.liquid_gold": "Liquid Gold",
+  "block.moarliquidsmod.palladium_block": "Palladium Block",
+
+  "creativetab.moarliquidsmod.fluids_tab": "Fluid Tab",
+  "creativetab.moarliquidsmod.not_fluid_tab": "Not Fluid Tab"
+}
